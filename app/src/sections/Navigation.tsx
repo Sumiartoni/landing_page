@@ -24,24 +24,21 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/95 backdrop-blur-lg shadow-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${
-              isScrolled ? "bg-[#C9A87C]" : "bg-[#1E293B]"
-            }`}>
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${isScrolled ? "bg-[#C9A87C]" : "bg-[#1E293B]"
+              }`}>
               <Coffee className="w-4 h-4 text-white" />
             </div>
-            <span className={`text-base font-bold transition-colors duration-300 ${
-              isScrolled ? "text-[#1E293B]" : "text-[#1E293B]"
-            }`}>
+            <span className={`text-base font-bold transition-colors duration-300 ${isScrolled ? "text-[#1E293B]" : "text-[#1E293B]"
+              }`}>
               Public Koffiee
             </span>
           </a>
@@ -64,9 +61,12 @@ export function Navigation() {
             <Button
               size="sm"
               className="bg-[#1E293B] hover:bg-[#334155] text-white rounded-lg text-xs"
+              asChild
             >
-              <Download className="w-3.5 h-3.5 mr-1.5" />
-              Download
+              <a href="/public-koffiee.apk" download="public-koffiee.apk">
+                <Download className="w-3.5 h-3.5 mr-1.5" />
+                Download
+              </a>
             </Button>
           </div>
 
@@ -86,11 +86,10 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 ${
-          isMobileMenuOpen
+        className={`md:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 ${isMobileMenuOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 py-3">
           <div className="flex flex-col gap-1">
@@ -107,9 +106,12 @@ export function Navigation() {
             <Button
               size="sm"
               className="bg-[#1E293B] hover:bg-[#334155] text-white rounded-lg mt-2 text-sm"
+              asChild
             >
-              <Download className="w-4 h-4 mr-2" />
-              Download APK
+              <a href="/public-koffiee.apk" download="public-koffiee.apk">
+                <Download className="w-4 h-4 mr-2" />
+                Download APK
+              </a>
             </Button>
           </div>
         </div>
